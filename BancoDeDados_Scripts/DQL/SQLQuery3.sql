@@ -15,28 +15,34 @@
 
 SELECT 
 Consulta.IdConsulta,
+Consulta.[Data],
 Consulta.Horario,
 Clinica.Nome AS Clinica,
 Paciente.Paciente,
 Medico.Medico,
 Especialidade.Especialidade,
 Medico.CRM,
-Prontuario.Preescricao,
+Prontuario.Descricao,
 Feedback.Comentario
 
 FROM
 Consulta
 
 LEFT Join
-Clinica on Consulta.IdMedico = Clinica.IdClinica
+Medico on Consulta.IdMedico=Medico.IdMedico
+
+LEFT Join
+Clinica on Consulta.IdMedico = Medico.IdMedico
+
 LEFT Join
 Paciente on Consulta.IdPaciente = Paciente.IdPaciente
+
 LEFT Join
-Medico on Consulta.IdMedico=Medico.IdMedico
-LEFT Join
-Prontuario on Consulta.IdConsulta=Prontuario.IdProntuario
+Prontuario on Consulta.IdConsulta= Prontuario.IdProntuario
+
 LEFT Join
 Especialidade on Consulta.IdMedico= Especialidade.IdEspecialidade
+
 LEFT Join
 Feedback on Consulta.IdConsulta=Feedback.IdFeedback
 
@@ -49,3 +55,6 @@ select * from Paciente
 select * from Medico
 select * from Consulta
 select * from Prontuario
+
+
+select * from Clinica inner join Medico on Medico.IdClinica = Clinica.IdClinica

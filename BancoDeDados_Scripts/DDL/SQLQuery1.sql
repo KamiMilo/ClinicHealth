@@ -72,8 +72,7 @@ Comentario VARCHAR (100)
 CREATE TABLE Prontuario
 ( IdProntuario INT PRIMARY KEY IDENTITY,
  IdConsulta INT FOREIGN KEY REFERENCES Consulta(IdConsulta),
- Diagnostico VARCHAR (300),
- Preescricao VARCHAR (500)
+ Descricao VARCHAR (500)
 )
 
 DROP DATABASE HealthClinic_Kamille
