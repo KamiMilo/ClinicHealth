@@ -46,21 +46,21 @@ CREATE TABLE Paciente
 (IdPaciente INT PRIMARY KEY IDENTITY,
 IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario),
 Paciente VARCHAR (50),
-Idade VARCHAR (100),
+DataDeNascimento VARCHAR (100),
 CPF VARCHAR (50),
 Sexo VARCHAR (50),
 Telefone VARCHAR (50),
 Email VARCHAR (100)
 )
 
-
+/*consulta apenas o administrador tera acesso para marcar, o diagnostico da consulta sera 
+colocado no prontuario aonde o médico ira adicionar*/
 CREATE TABLE Consulta
 (IdConsulta INT PRIMARY KEY IDENTITY,
 IdMedico INT FOREIGN KEY REFERENCES Medico(IdMedico),
 IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente),
 Horario TIME,
-[Data] DATE,
-Diagnostico VARCHAR (300)
+[Data] DATE
 )
 
 CREATE TABLE  Feedback
@@ -72,8 +72,8 @@ Comentario VARCHAR (100)
 CREATE TABLE Prontuario
 ( IdProntuario INT PRIMARY KEY IDENTITY,
  IdConsulta INT FOREIGN KEY REFERENCES Consulta(IdConsulta),
- IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente),
- Descricao VARCHAR (100)
+ Diagnostico VARCHAR (300),
+ Preescricao VARCHAR (500)
 )
 
 DROP DATABASE HealthClinic_Kamille
