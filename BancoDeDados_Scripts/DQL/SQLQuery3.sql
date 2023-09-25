@@ -56,5 +56,7 @@ select * from Medico
 select * from Consulta
 select * from Prontuario
 
+DELETE FROM TipoDeUsuario Where Id
+
 
 select * from Clinica inner join Medico on Medico.IdClinica = Clinica.IdClinica

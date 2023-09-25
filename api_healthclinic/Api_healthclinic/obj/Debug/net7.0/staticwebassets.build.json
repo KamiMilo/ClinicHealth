@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "VCjAAYrl8FprCD9VslMSTqMbJX86GBwq6D5QcdO1lao=",
+  "Source": "Api_healthclinic",
+  "BasePath": "_content/Api_healthclinic",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
