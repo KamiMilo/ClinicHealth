@@ -30,6 +30,6 @@ namespace Api_healthclinic.Domains
         public Guid IdTipoUsuario { get; set; }
 
         [ForeignKey("IdTipoUsuario")]
-        public Usuario? tipoUsuario { get; set; }
+        public TipoUsuario? tipoUsuario { get; set; }
     }
 }

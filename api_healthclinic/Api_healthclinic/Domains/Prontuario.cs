@@ -13,6 +13,7 @@ namespace Api_healthclinic.Domains
         [Required(ErrorMessage = "Informe a data de abertura!!")]
         public DateTime? DataAbertura { get; set; }
 
+
         [Column(TypeName = "TEXT")]
         [Required(ErrorMessage = "Informe a descrição do prontuario!!")]
         public string? Descricao { get; set; }

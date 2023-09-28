@@ -22,14 +22,17 @@ namespace Api_healthclinic.Domains
         public Paciente? paciente { get; set; }
 
         ///////////////////////////////////////////////////
-        
-        [Required(ErrorMessage ="informe o médico!!")]
-        public Guid IdMedico { get;set; }
+
+        [Required(ErrorMessage ="O médico é obrigatório!!")]
+
+        public Guid IdMedico { get; set; }
 
         [ForeignKey("IdMedico")]
-        public Medico? medico { get; set; }
+
+        public Medico? Medico { get; set; }
 
         //////////////////////////////////////////////
+        
         [Required(ErrorMessage ="informe o Paciente!!")]
         public Guid IdFeedback{ get; set; }
 

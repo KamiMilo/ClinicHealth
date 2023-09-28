@@ -18,9 +18,14 @@ namespace Api_healthclinic.Domains
         [Required(ErrorMessage = "O campo Nome é obrigatorio!")]
         public string? Nome { get; set; }
 
+        [Column(TypeName = "DATE")]
+        [Required(ErrorMessage = "A Data de nascimento é obrigatória!")]
+        public DateTime? DatadeNascimento { get; set; }
+
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "informe o CRM do médico!")]
         public string? Crm { get; set; }
+
 
         //tabela que referencia a Chave estrangeira(Tabela de Tipo Usuario)
         [Required(ErrorMessage = "Informe o usuario!")]
@@ -29,7 +34,15 @@ namespace Api_healthclinic.Domains
         [ForeignKey("IdUsuario")]
         public Usuario? Usuario { get; set; }
 
-        [Required(ErrorMessage = "Informe a Clinica!")]
+
+
+        [Required(ErrorMessage ="A especialidade é Obrigatória!")]
+        public Guid IdEspecialidade { get; set; }
+
+        [ForeignKey("IdEspecialidade")]
+        public  Especialidade? Especialidade { get; set; }
+
+
         public Guid IdClinica { get; set; }
 
         [ForeignKey("IdClinica")]

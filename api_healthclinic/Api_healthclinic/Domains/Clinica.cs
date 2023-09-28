@@ -1,13 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api_healthclinic.Domains
 {
     [Table("Clinica")]
+    [Index(nameof(Cnpj),IsUnique=true)]
     public class Clinica
     {
         [Key]
-
         public Guid IdClinica { get; set; } = Guid.NewGuid();
 
         //aqui é definido que cada classe será uma tabela
@@ -23,17 +24,25 @@ namespace Api_healthclinic.Domains
         [Required(ErrorMessage = "O cep é obrigatório!")]
         public string? Cep { get; set; }
 
-        [Column(TypeName = "VARCHAR")]
+
+        [Column(TypeName = "VARCHAR(14)")]
         [Required(ErrorMessage = "O CNPJ da clinica é obrigatório!")]
         public string? Cnpj { get; set; }
 
+
+
         [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "O horario de abertura é obrigatório!")]
-        public TimeOnly? HorarioAbertura { get; set; } 
+        public TimeSpan? HorarioAbertura { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
+
+
 
         [Column(TypeName = "TIME")]
         [Required(ErrorMessage = "O horario de Fechamento é obrigatório!")]
-        public TimeOnly? HorarioFechamento { get; set; } 
+        public TimeSpan? HorarioFechamento { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
+
 
 
         [Column(TypeName = "VARCHAR")]

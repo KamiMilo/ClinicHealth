@@ -25,9 +25,6 @@ namespace Api_healthclinic.Domains
         [Required(ErrorMessage = "Informe o Telefone do Paciente!!")]
         public string? Telefone { get; set; }
 
-        [Column(TypeName = "VARCHAR(100)")]
-        [Required(ErrorMessage = "Informe um email!")]
-        public string? Email { get; set; }
 
         [Required(ErrorMessage = "Informe o usuario!")]
         public Guid IdUsuario { get; set; }

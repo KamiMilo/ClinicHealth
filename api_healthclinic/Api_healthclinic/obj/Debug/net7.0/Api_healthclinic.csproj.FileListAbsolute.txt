@@ -78,3 +78,5 @@ C:\Users\47766876825\Desktop\ClinicHealth\api_healthclinic\Api_healthclinic\obj\
 C:\Users\47766876825\Desktop\ClinicHealth\api_healthclinic\Api_healthclinic\obj\Debug\net7.0\Api_healthclinic.pdb
 C:\Users\47766876825\Desktop\ClinicHealth\api_healthclinic\Api_healthclinic\obj\Debug\net7.0\Api_healthclinic.genruntimeconfig.cache
 C:\Users\47766876825\Desktop\ClinicHealth\api_healthclinic\Api_healthclinic\obj\Debug\net7.0\ref\Api_healthclinic.dll
+C:\Users\47766876825\Desktop\ClinicHealth\api_healthclinic\Api_healthclinic\bin\Debug\net7.0\BCrypt.Net-Next.dll
+C:\Users\47766876825\Desktop\ClinicHealth\api_healthclinic\Api_healthclinic\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

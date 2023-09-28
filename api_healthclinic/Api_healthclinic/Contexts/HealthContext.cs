@@ -11,6 +11,8 @@ namespace Api_healthclinic.Contexts
 
         public DbSet<Usuario> Usuario { get; set; }
 
+        public DbSet<Administrador> Administrador { get; set; }
+
         public DbSet<Clinica> Clinica { get; set; }
 
         public DbSet<Consulta> Consulta { get; set; }
@@ -28,7 +30,7 @@ namespace Api_healthclinic.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=  NOTE07-S14; Database = inlock_games_codefirst; User Id =sa ;pwd= Senai@134 ; TrustServerCertificate=true;");
+            optionsBuilder.UseSqlServer("Server=  NOTE07-S14; Database = health_clinic_kamille; User Id =sa ;pwd= Senai@134 ; TrustServerCertificate=true;");
             base.OnConfiguring(optionsBuilder);
         }
     }
