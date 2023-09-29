@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api_healthclinic.Domains
 {
     [Table("Paciente")]
+    [Index(nameof(Cpf), IsUnique = true)]
+    [Index(nameof(Telefone), IsUnique = true)]
     public class Paciente
     {
         [Key]
@@ -17,9 +20,10 @@ namespace Api_healthclinic.Domains
         [Required(ErrorMessage = "o campo Data de nascimento é Obrigatório !")]
         public DateTime? DataDeNascimento { get; set; }
 
-        [Column(TypeName = "VARCHAR(50)")]
-        [Required(ErrorMessage = "Informe o sexo do paciente!")]
-        public string? Sexo { get; set; }
+        [Column(TypeName = "VARCHAR(11)")]
+        [Required(ErrorMessage = "O campo cpf é obrigatorio!")]
+        [MaxLength(11)]
+        public string? Cpf { get; set; }
 
         [Column(TypeName = "VARCHAR(50)")]
         [Required(ErrorMessage = "Informe o Telefone do Paciente!!")]

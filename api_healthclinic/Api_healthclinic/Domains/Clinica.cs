@@ -27,6 +27,7 @@ namespace Api_healthclinic.Domains
 
         [Column(TypeName = "VARCHAR(14)")]
         [Required(ErrorMessage = "O CNPJ da clinica é obrigatório!")]
+        [StringLength(14)]
         public string? Cnpj { get; set; }
 
 

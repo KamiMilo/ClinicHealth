@@ -12,6 +12,11 @@ namespace Api_healthclinic.Domains
         [Column(TypeName = "DATE")]
         [Required(ErrorMessage = "O campo Nome é obrigatorio!")]
         public DateTime? DataDaConsulta { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"dd\mm\yyyy")]
+
+        [Column(TypeName = "TEXT")]
+        [Required(ErrorMessage = "A descrição é obrigatória!")]
+        public string Descricao { get; set; }
 
 
         //**********FOREIGN KEYS*************************

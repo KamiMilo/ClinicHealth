@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api_healthclinic.Domains
 {
     [Table("Especialidade")]
+    [Index(nameof(EspecialidadeNome), IsUnique = true)]
+
     public class Especialidade
     {
         [Key]

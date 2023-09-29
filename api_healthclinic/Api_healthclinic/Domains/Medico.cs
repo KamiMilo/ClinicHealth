@@ -20,10 +20,12 @@ namespace Api_healthclinic.Domains
 
         [Column(TypeName = "DATE")]
         [Required(ErrorMessage = "A Data de nascimento é obrigatória!")]
+     
         public DateTime? DatadeNascimento { get; set; }
 
-        [Column(TypeName = "VARCHAR(100)")]
+        [Column(TypeName = "VARCHAR(10)")]
         [Required(ErrorMessage = "informe o CRM do médico!")]
+        [StringLength(10)]
         public string? Crm { get; set; }
 
 

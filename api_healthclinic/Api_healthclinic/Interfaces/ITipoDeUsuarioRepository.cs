@@ -9,6 +9,8 @@ namespace Api_healthclinic.Interfaces
         public void Cadastrar(TipoUsuario novoTipo);
 
         public List<TipoUsuario> Listar();
+
+        public void Deletar(Guid id);
         
     }
 }

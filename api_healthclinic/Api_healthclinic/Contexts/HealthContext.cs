@@ -11,7 +11,6 @@ namespace Api_healthclinic.Contexts
 
         public DbSet<Usuario> Usuario { get; set; }
 
-        public DbSet<Administrador> Administrador { get; set; }
 
         public DbSet<Clinica> Clinica { get; set; }
 

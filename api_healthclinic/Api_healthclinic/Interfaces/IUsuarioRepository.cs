@@ -6,7 +6,9 @@ namespace Api_healthclinic.Interfaces
     {
         public void Cadastrar(Usuario novoUsuario);
 
-        public void BuscarUsuario(Guid Id);
+        public void BuscarPorEmail(String email,string senha);
+
+        public void BuscaPorId(Guid id);
 
         public void Atualizar(Guid id);
 
