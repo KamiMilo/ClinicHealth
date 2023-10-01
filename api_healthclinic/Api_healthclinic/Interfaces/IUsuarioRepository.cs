@@ -6,11 +6,15 @@ namespace Api_healthclinic.Interfaces
     {
         public void Cadastrar(Usuario novoUsuario);
 
-        public void BuscarPorEmail(String email,string senha);
+        public List<Usuario> Listar();
 
-        public void BuscaPorId(Guid id);
+        public Usuario BuscarPorEmail(string email,string senha);
 
-        public void Atualizar(Guid id);
+        public Usuario BuscaPorId(Guid id);
+
+        public void Deletar(Guid id);
+
+
 
     }
 }

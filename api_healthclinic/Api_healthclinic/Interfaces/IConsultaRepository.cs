@@ -8,12 +8,14 @@ namespace Api_healthclinic.Interfaces
 
         public List<Consulta> Listar();
 
-        public List<Consulta> ListarMinhas(Guid id ,Consulta consulta);
+        public List<Consulta> ListarPaciente(Guid id);
 
-        public void Atualizar(Guid id);
+        public List<Consulta> ListarMedico(Guid id);
+
+        public void Atualizar(Guid id ,Consulta consulta);
 
         public void Deletar(Guid id);
 
-        public void BuscarPorId(Guid id);
+        public Consulta BuscarPorId(Guid id);
     }
 }

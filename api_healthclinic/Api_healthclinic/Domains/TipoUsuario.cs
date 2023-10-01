@@ -7,7 +7,6 @@ namespace Api_healthclinic.Domains
     public class TipoUsuario
     {
         [Key]
-
         public Guid IdTipoUsuario { get; set; } = Guid.NewGuid();
 
         //aqui é definido que cada classe será uma tabela

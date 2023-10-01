@@ -14,19 +14,37 @@ namespace Api_healthclinic.Repositories
             ctx = new HealthContext();
         }
 
-        public void Atualizar(Guid id)
+
+        public Usuario BuscaPorId(Guid id)
         {
-            Usuario usuarioBuscado = ctx.Usuario.Find(id);
+            try
+            {
+                Usuario usuarioBuscado = ctx.Usuario
+                    .Select(u => new Usuario
+                    {
+                        IdUsuario = u.IdUsuario,
+                        Nome = u.Nome,
+                        Email = u.Email,
+                        Senha = u.Senha,
+                        tipoUsuario = new TipoUsuario
+                        {
+                            IdTipoUsuario = u.IdTipoUsuario,
+                            NomeTipoUsuario = u.tipoUsuario!.NomeTipoUsuario
+                        }
+                    }).FirstOrDefault(u => u.IdUsuario == id)!;
 
-            ctx.Usuario.Update(usuarioBuscado);
-
-            ctx.SaveChanges();
+                if (usuarioBuscado != null)
+                {
+                    return usuarioBuscado;
+                }
+                return null!;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
-
-        public void BuscaPorId(Guid id)
-        {
-            throw new NotImplementedException();
-        }
+    
 
         public Usuario BuscarPorEmail(string email, string senha)
         {
@@ -39,7 +57,12 @@ namespace Api_healthclinic.Repositories
                         Nome = u.Nome,
                         Email = u.Email,
                         Senha = u.Senha,
-             
+                              tipoUsuario = new TipoUsuario
+                        {
+                            IdTipoUsuario = u.IdTipoUsuario,
+                            NomeTipoUsuario = u.tipoUsuario!.NomeTipoUsuario
+                        }
+
                     }).FirstOrDefault(u => u.Email == email)!;
 
                 if (usuarioBuscado != null)
@@ -59,14 +82,14 @@ namespace Api_healthclinic.Repositories
             }
         }
 
-
         public void Cadastrar(Usuario novoUsuario)
         {
             try
             {
-                novoUsuario.Senha = ctx.Criptografia.GerarHash(novoUsuario.senha!);
+                novoUsuario.Senha = Criptografia.GerarHash(novoUsuario.Senha!);
+                novoUsuario.IdUsuario = Guid.NewGuid();
                 ctx.Usuario.Add(novoUsuario);
-                ctx.SaveChanges();
+                ctx.SaveChanges();            
             }
 
             catch (Exception) 
@@ -75,9 +98,18 @@ namespace Api_healthclinic.Repositories
             }
         }
 
-        void IUsuarioRepository.BuscarPorEmail(string email, string senha)
+        public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            Usuario usuariobuscado = ctx.Usuario.Find(id);
+
+            ctx.Usuario.Remove(usuariobuscado);
+
+            ctx.SaveChanges();
+        }
+
+        public List<Usuario> Listar()
+        {
+            return ctx.Usuario.ToList();   
         }
     }
 }

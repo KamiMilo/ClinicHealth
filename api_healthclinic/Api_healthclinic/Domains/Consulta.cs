@@ -10,9 +10,14 @@ namespace Api_healthclinic.Domains
         public Guid IdConsulta { get; set; }= Guid.NewGuid();
 
         [Column(TypeName = "DATE")]
-        [Required(ErrorMessage = "O campo Nome é obrigatorio!")]
+        [Required(ErrorMessage = "O campo Data é obrigatorio!")]
         public DateTime? DataDaConsulta { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"dd\mm\yyyy")]
+
+        [Column(TypeName = "TIME")]
+        [Required(ErrorMessage = "O campo Horario é obrigatorio!")]
+        public TimeSpan? HoraConsulta { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
 
         [Column(TypeName = "TEXT")]
         [Required(ErrorMessage = "A descrição é obrigatória!")]

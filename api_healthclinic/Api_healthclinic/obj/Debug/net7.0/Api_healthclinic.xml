@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api_healthclinic</name>
+    </assembly>
+    <members>
+        <member name="M:Api_healthclinic.Controllers.ConsultaController.Post(Api_healthclinic.Domains.Consulta)">
+            <summary>
+            End Point que aciona o método de Cadastrar.
+            </summary>
+            <param name="usuario"></param>
+            <returns>StatusCode</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.LoginController.Post(Api_healthclinic.ViewModels.LoginViewModels)">
+            <summary>
+            End Point de Login.
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.TipoDeUsuarioController.Post(Api_healthclinic.Domains.TipoUsuario)">
+            <summary>
+            End Point para cadastrar um novo tipo de usuario.
+            </summary>
+            <param name="tiposUsuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.TipoDeUsuarioController.Get">
+            <summary>
+            End Point que lista os Tipos de Usuario cadastrados
+            </summary>
+            <returns>Lista</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.UsuarioController.Post(Api_healthclinic.Domains.Usuario)">
+            <summary>
+            End Point que aciona o método de Cadastrar.
+            </summary>
+            <param name="usuario"></param>
+            <returns>StatusCode</returns>
+        </member>
+        <member name="T:Api_healthclinic.Migrations.BD">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Api_healthclinic.Migrations.BD2">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Api_healthclinic.Migrations.BD3">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD3.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD3.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD3.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Api_healthclinic.Migrations.Bd4">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.Bd4.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.Bd4.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.Bd4.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Api_healthclinic.Migrations.BD5">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD5.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD5.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD5.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -7,9 +7,18 @@ namespace Api_healthclinic.Repositories
     public class TipoDeUsuarioRepository : ITipoDeUsuarioRepository
     {
         private readonly HealthContext ctx;
+
+        public TipoDeUsuarioRepository() 
+        { 
+            ctx = new HealthContext();
+        }
         public void Cadastrar(TipoUsuario novoTipo)
         {
+            novoTipo.IdTipoUsuario = Guid.NewGuid();
+
             ctx.TipoUsuario.Add(novoTipo);
+
+            ctx.SaveChanges();
         }
 
         public void Deletar(Guid id)

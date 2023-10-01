@@ -4,6 +4,7 @@ using Api_healthclinic.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api_healthclinic.Migrations
 {
     [DbContext(typeof(HealthContext))]
-    partial class HealthContextModelSnapshot : ModelSnapshot
+    [Migration("20230930205257_Bd4")]
+    partial class Bd4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,10 +81,6 @@ namespace Api_healthclinic.Migrations
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<TimeSpan?>("HoraConsulta")
-                        .IsRequired()
-                        .HasColumnType("TIME");
 
                     b.Property<Guid>("IdFeedback")
                         .HasColumnType("uniqueidentifier");
