@@ -31,12 +31,7 @@ namespace Api_healthclinic.Controllers
             }
         }
 
-        /// <summary>
-        /// End Point que aciona o método de Cadastrar.
-        /// </summary>
-        /// <param name="usuario"></param>
-        /// <returns>StatusCode</returns>
-        //********CADASTRAR******************
+
         [HttpPost]
         public IActionResult Post(Consulta novaConsulta)
         {
@@ -44,6 +39,20 @@ namespace Api_healthclinic.Controllers
             {
                 _ConsultaRepository.Cadastrar(novaConsulta);
                 return StatusCode(201, novaConsulta);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPatch]
+        public IActionResult pacth(Consulta consulta, Guid id)
+        {
+            try
+            {
+                _ConsultaRepository.Atualizar(id, consulta);
+                return Ok(consulta);
             }
             catch (Exception e)
             {

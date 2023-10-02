@@ -26,10 +26,10 @@ namespace Api_healthclinic.Repositories
                         Nome = u.Nome,
                         Email = u.Email,
                         Senha = u.Senha,
-                        tipoUsuario = new TipoUsuario
+                        TipoUsuario = new TipoUsuario
                         {
                             IdTipoUsuario = u.IdTipoUsuario,
-                            NomeTipoUsuario = u.tipoUsuario!.NomeTipoUsuario
+                            NomeTipoUsuario = u.TipoUsuario!.NomeTipoUsuario
                         }
                     }).FirstOrDefault(u => u.IdUsuario == id)!;
 
@@ -57,10 +57,10 @@ namespace Api_healthclinic.Repositories
                         Nome = u.Nome,
                         Email = u.Email,
                         Senha = u.Senha,
-                              tipoUsuario = new TipoUsuario
+                              TipoUsuario = new TipoUsuario
                         {
                             IdTipoUsuario = u.IdTipoUsuario,
-                            NomeTipoUsuario = u.tipoUsuario!.NomeTipoUsuario
+                            NomeTipoUsuario = u.TipoUsuario!.NomeTipoUsuario
                         }
 
                     }).FirstOrDefault(u => u.Email == email)!;
@@ -86,9 +86,9 @@ namespace Api_healthclinic.Repositories
         {
             try
             {
-                novoUsuario.Senha = Criptografia.GerarHash(novoUsuario.Senha!);
                 novoUsuario.IdUsuario = Guid.NewGuid();
-                ctx.Usuario.Add(novoUsuario);
+                novoUsuario.Senha = Criptografia.GerarHash(novoUsuario.Senha!);
+                ctx.Usuario!.Add(novoUsuario);
                 ctx.SaveChanges();            
             }
 

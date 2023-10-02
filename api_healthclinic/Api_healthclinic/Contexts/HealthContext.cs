@@ -26,16 +26,16 @@ namespace Api_healthclinic.Contexts
         public DbSet<Prontuario> Prontuario { get; set; }
 
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer("Server=  NOTE07-S14; Database = health_clinic_kamille; User Id =sa ;pwd= Senai@134 ; TrustServerCertificate=true;");
-        //    base.OnConfiguring(optionsBuilder);
-        //}
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server = LAPTOP-PNE5VUNU\\SQLEXPRESS; Initial Catalog = health_clinic_kamille; Integrated Security = true ;TrustServerCertificate=true;");
+           optionsBuilder.UseSqlServer("Server=  NOTE07-S14; Database = health_clinic_kamille; User Id =sa ;pwd= Senai@134 ; TrustServerCertificate=true;");
             base.OnConfiguring(optionsBuilder);
         }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Server = LAPTOP-PNE5VUNU\\SQLEXPRESS; Initial Catalog = health_clinic_kamille; Integrated Security = true ;TrustServerCertificate=true;");
+        //    base.OnConfiguring(optionsBuilder);
+        //}
     }
 }

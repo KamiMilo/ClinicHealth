@@ -46,7 +46,7 @@ namespace Api_healthclinic.Controllers
                     new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email!),
                     new Claim(JwtRegisteredClaimNames.Name, usuarioBuscado.Nome!),
                     new Claim(JwtRegisteredClaimNames.Jti,usuarioBuscado.IdUsuario.ToString()),
-                    new Claim(ClaimTypes.Role,usuarioBuscado.tipoUsuario!.NomeTipoUsuario!)
+                    new Claim(ClaimTypes.Role,usuarioBuscado.TipoUsuario!.NomeTipoUsuario!)
                 };
 
                 var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Api-healthclinic-webapi-chave-autenticacao"));

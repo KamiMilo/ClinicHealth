@@ -8,7 +8,7 @@ namespace Api_healthclinic.Interfaces
 
         public List<Feedback> Listar();
 
-        public void Atualizar(Guid id);
+        public void Atualizar(Guid id, Feedback comentario);
 
         public void Deletar(Guid id);
 

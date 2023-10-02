@@ -164,3 +164,5 @@ C:\Users\kamil\OneDrive\Área de Trabalho\ClinicHealth\api_healthclinic\Api_heal
 C:\Users\kamil\OneDrive\Área de Trabalho\ClinicHealth\api_healthclinic\Api_healthclinic\obj\Debug\net7.0\Api_healthclinic.xml
 C:\Users\kamil\OneDrive\Área de Trabalho\ClinicHealth\api_healthclinic\Api_healthclinic\obj\Debug\net7.0\Api_healthclinic.genruntimeconfig.cache
 C:\Users\kamil\OneDrive\Área de Trabalho\ClinicHealth\api_healthclinic\Api_healthclinic\obj\Debug\net7.0\ref\Api_healthclinic.dll
+C:\Users\47766876825\Desktop\ClinicHealth\api_healthclinic\Api_healthclinic\bin\Debug\net7.0\Api_healthclinic.xml
+C:\Users\47766876825\Desktop\ClinicHealth\api_healthclinic\Api_healthclinic\obj\Debug\net7.0\Api_healthclinic.xml

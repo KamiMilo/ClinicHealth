@@ -32,12 +32,7 @@ namespace Api_healthclinic.Controllers
             }
         }
 
-        /// <summary>
-        /// End Point que aciona o método de Cadastrar.
-        /// </summary>
-        /// <param name="usuario"></param>
-        /// <returns>StatusCode</returns>
-        //********CADASTRAR******************
+ 
         [HttpPost]
         public IActionResult Post(Usuario usuario)
         {

@@ -4,12 +4,22 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using System.Reflection;
 
-var builder = WebApplication.CreateBuilder(args);
 
+        var builder = WebApplication.CreateBuilder(args);
 
-//Adiciona o serviço de Controllers
-builder.Services.AddControllers();
-//adiciona servico jwt bearer (forma de autenticacao)
+// Add services to the container.
+builder.Services
+    .AddControllers()
+        .AddNewtonsoftJson(options =>
+        {
+            // Ignora os loopings nas consultas
+            options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            // Ignora valores nulos ao fazer junções nas consultas
+            options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+        }
+    );
+
+//Adiciona serviço de Jwt Bearer (forma de autenticação)
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultChallengeScheme = "JwtBearer";
@@ -26,13 +36,13 @@ builder.Services.AddAuthentication(options =>
         //valida quem está recebendo
         ValidateAudience = true,
 
-        //define se o tempo de expiracao sera validado 
+        //define se o tempo de expiração será validado
         ValidateLifetime = true,
 
-        //froma de criptografia e valida a chave de autenticacao
+        //forma de criptografia e valida a chave de autenticação
         IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Api-healthclinic-webapi-chave-autenticacao")),
 
-        //valida o tempo de expiracao do token
+        //valida o tempo de expiração do token
         ClockSkew = TimeSpan.FromMinutes(5),
 
         //nome do issuer (de onde está vindo)
@@ -43,6 +53,8 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
 
 
 //Adicione o gerador do Swagger à coleção de serviços
@@ -53,19 +65,20 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "API Health Clinic",
-        Description = "API para o projeto Health Clinic que simula o gerenciamento de uma cliníca de Saúde",
+        Description = "API para gerenciamento da Web Clinica Médica - BackEnd",
         Contact = new OpenApiContact
         {
-            Name = "Senai Informática - Kamillle Milo",
-            Url = new Uri("https://github.com/KamiMilo")
+            Name = "Senai Informática - Turma Manhã",
+            Url = new Uri("https://github.com/Marqzzs/Health_Clinic")
         }
     });
 
+    options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
 
-    ////Configura o Swagger para usar o arquivo XML gerado
+
+    //Configura o Swagger para usar o arquivo XML gerado
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
-
 
 
     //Usando a autenticaçao no Swagger
@@ -94,19 +107,35 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-
+// CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        });
+});
 
 var app = builder.Build();
-
-//Começa a configuração do Swagger
-//https://learn.microsoft.com/pt-br/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-7.0&tabs=visual-studio
 
 //Habilite o middleware para atender ao documento JSON gerado e à interface do usuário do Swagger
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
+
 }
+
+app.UseSwagger(options =>
+{
+    options.SerializeAsV2 = true;
+});
+
+app.UseSwaggerUI();
+
+app.UseDeveloperExceptionPage();
 
 //Para atender à interface do usuário do Swagger na raiz do aplicativo
 app.UseSwaggerUI(options =>
@@ -115,18 +144,16 @@ app.UseSwaggerUI(options =>
     options.RoutePrefix = string.Empty;
 });
 
-//Finaliza a configuração do Swagger
+app.UseRouting();
 
-//Adiciona mapeamento dos Controllers
-app.MapControllers();
-
-//Adicona Autenticação
-app.UseAuthentication();
-
-//Adicona Autorização
-app.UseAuthorization();
+app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
+
+app.UseAuthorization();
+
+app.MapControllers();
 
 app.Run();

@@ -3339,19 +3339,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kamil\\.nuget\\packages\\": {}
+    "C:\\Users\\47766876825\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kamil\\OneDrive\\Área de Trabalho\\ClinicHealth\\api_healthclinic\\Api_healthclinic\\Api_healthclinic.csproj",
+      "projectUniqueName": "C:\\Users\\47766876825\\Desktop\\ClinicHealth\\api_healthclinic\\Api_healthclinic\\Api_healthclinic.csproj",
       "projectName": "Api_healthclinic",
-      "projectPath": "C:\\Users\\kamil\\OneDrive\\Área de Trabalho\\ClinicHealth\\api_healthclinic\\Api_healthclinic\\Api_healthclinic.csproj",
-      "packagesPath": "C:\\Users\\kamil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kamil\\OneDrive\\Área de Trabalho\\ClinicHealth\\api_healthclinic\\Api_healthclinic\\obj\\",
+      "projectPath": "C:\\Users\\47766876825\\Desktop\\ClinicHealth\\api_healthclinic\\Api_healthclinic\\Api_healthclinic.csproj",
+      "packagesPath": "C:\\Users\\47766876825\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\47766876825\\Desktop\\ClinicHealth\\api_healthclinic\\Api_healthclinic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kamil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\47766876825\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3437,7 +3437,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

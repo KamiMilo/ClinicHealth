@@ -8,7 +8,7 @@ namespace Api_healthclinic.Interfaces
 
         public List<Paciente> Listar();
 
-        public void Atualizar(Guid id);
+        public void Atualizar(Guid id, Paciente paciente);
 
         public void Deletar(Guid id);
 

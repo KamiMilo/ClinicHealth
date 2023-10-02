@@ -13,6 +13,7 @@ namespace Api_healthclinic.Repositories
         {
             ctx = new HealthContext();
         }
+
         public void Cadastrar(Clinica novoClinica)
         {
  
