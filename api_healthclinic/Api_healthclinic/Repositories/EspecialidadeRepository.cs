@@ -22,7 +22,7 @@ namespace Api_healthclinic.Repositories
                 especialidadeBuscada.EspecialidadeNome = especialidade.EspecialidadeNome;
 
             }
-                ctx.Consulta.Update(especialidadeBuscada);
+                ctx.Especialidade.Update(especialidadeBuscada);
                 ctx.SaveChanges();
         }
 

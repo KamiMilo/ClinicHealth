@@ -24,7 +24,7 @@ namespace Api_healthclinic.Controllers
             /// </summary>
             /// <param name="tiposUsuario"></param>
             /// <returns></returns>
-            //********CADASTRAR**************
+            
 
             [HttpPost]
             public IActionResult Post(TipoUsuario tipoUsuario)
@@ -43,7 +43,7 @@ namespace Api_healthclinic.Controllers
             /// End Point que lista os Tipos de Usuario cadastrados
             /// </summary>
             /// <returns>Lista</returns>
-            //*********Listar*******************
+           
 
             [HttpGet]
             public IActionResult Get()
@@ -61,7 +61,12 @@ namespace Api_healthclinic.Controllers
                 }
             }
 
-            [HttpDelete]
+        /// <summary>
+        /// End Point que aciona o método pra Deletar.
+        /// </summary>
+        /// <returns></returns>
+
+        [HttpDelete("{id}")]
             public IActionResult Delete(Guid id)
             {
                 try

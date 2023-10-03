@@ -17,6 +17,10 @@ namespace Api_healthclinic.Controllers
         {
             _medicoRepository = new MedicoRepository();
         }
+        /// <summary>
+        /// End Point que aciona o método de Cadastrar.
+        /// </summary>
+        /// <returns>Ok</returns>
 
         [HttpPost]
         public IActionResult Post(Medico medico)
@@ -31,6 +35,10 @@ namespace Api_healthclinic.Controllers
                 return BadRequest(e.Message);
             }
         }
+        /// <summary>
+        /// End Point que aciona o método de Listar os médicos.
+        /// </summary>
+        /// <returns>Lista</returns>
 
         [HttpGet]
         public IActionResult Get()
@@ -38,6 +46,48 @@ namespace Api_healthclinic.Controllers
             try
             {
                 return Ok(_medicoRepository.Listar());
+
+            }
+
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+
+            }
+
+        }
+        /// <summary>
+        /// End Point que aciona o método Atualizar.
+        /// </summary>
+        /// <returns>Médico atualizado</returns>
+        [HttpPatch]
+            public IActionResult Patch(Guid id, Medico medico)
+            {
+                try
+                {
+                    _medicoRepository.Atualizar(id, medico);
+                    return StatusCode(200, medico);
+
+                }
+
+                catch (Exception e)
+                {
+                    return BadRequest(e.Message);
+
+                }
+            }
+        /// <summary>
+        /// End Point que aciona o método pra Deletar.
+        /// </summary>
+        /// <returns>Ok</returns>
+
+        [HttpDelete]
+         public IActionResult Delete(Guid id )
+         {
+            try
+            {
+                _medicoRepository.Deletar(id);
+                return StatusCode(200);
 
             }
 

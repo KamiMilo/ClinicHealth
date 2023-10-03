@@ -9,16 +9,16 @@ namespace Api_healthclinic.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class EspecilidadeController : ControllerBase
+    public class ProntuarioController : ControllerBase
     {
-        private IEspecialidadeRepository _especialidadeRepository;
+        private IProntuarioRepository _prontuarioRepository;
 
-        public EspecilidadeController()
+        public ProntuarioController()
         {
-            _especialidadeRepository = new EspecialidadeRepository();
+            _prontuarioRepository = new ProntuarioRepository();
         }
         /// <summary>
-        /// End Point que aciona o método de Listar as Especialidades.
+        /// End Point que aciona o método de listar.
         /// </summary>
         /// <returns>Lista</returns>
 
@@ -27,69 +27,78 @@ namespace Api_healthclinic.Controllers
         {
             try
             {
+                return Ok(_prontuarioRepository.Listar());
 
-                return Ok(_especialidadeRepository.Listar());
+            }
+
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+
+            }
+        }
+
+           /// <summary>
+           /// End Point que aciona o método de Cadastrar.
+           /// </summary>
+           /// <returns></returns>
+          [HttpPost]
+          public IActionResult Post(Prontuario prontuario)
+          {
+            try
+            {
+                _prontuarioRepository.Cadastrar(prontuario);
+                return StatusCode(201);
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
         }
+        
         /// <summary>
-        /// End Point que aciona o método de Cadastrar.
+        /// End Point que aciona o método de Buscar pelo id.
         /// </summary>
-        /// <returns>Especialidade</returns>
+        /// <param name="id"></param>
+        /// <returns></returns>
 
-        [HttpPost]
-        public IActionResult Post(Especialidade novaEspecialidade)
+        [HttpGet("{id}")]
+        public IActionResult GetById(Guid id)
         {
             try
             {
-                _especialidadeRepository.Cadastrar(novaEspecialidade);
-                return StatusCode(201, novaEspecialidade);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
-        /// <summary>
-        /// End Point que aciona o método de (atualizar) editar uma especialidade.
-        /// </summary>
-        /// <returns>Especialidade atualizada</returns>
+                return Ok(_prontuarioRepository.BuscarporId(id));
 
-        [HttpPatch]
-        public IActionResult pacth(Especialidade especialidade, Guid id)
-        {
-            try
-            {
-                _especialidadeRepository.Atualizar(id, especialidade);
-                return Ok(especialidade);
             }
+
             catch (Exception e)
             {
                 return BadRequest(e.Message);
+
             }
+
         }
 
         /// <summary>
         /// End Point que aciona o método pra Deletar.
         /// </summary>
-        /// <returns>Ok</returns>
-
+        /// <returns></returns>
         [HttpDelete]
-        public IActionResult Delete( Guid id)
+        public IActionResult Delete(Guid id)
         {
             try
             {
-                _especialidadeRepository.Deletar(id);
+                _prontuarioRepository.Delete(id);
                 return StatusCode(200);
+
             }
+
             catch (Exception e)
             {
                 return BadRequest(e.Message);
+
             }
         }
-
     }
+
 }

@@ -25,7 +25,7 @@ namespace Api_healthclinic.Controllers
         /// End Point de Login.
         /// </summary>
         /// <param name="usuario"></param>
-        /// <returns></returns>
+        /// <returns>Token de acesso</returns>
 
         [HttpPost]
         public IActionResult Post(LoginViewModels usuario)

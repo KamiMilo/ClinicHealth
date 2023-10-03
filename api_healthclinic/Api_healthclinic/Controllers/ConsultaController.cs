@@ -17,6 +17,10 @@ namespace Api_healthclinic.Controllers
         {
             _ConsultaRepository = new ConsultaRepository();
         }
+        /// <summary>
+        /// End Point que aciona o método de Listar todas as Consultas.
+        /// </summary>
+        /// <returns>Lista</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -30,7 +34,10 @@ namespace Api_healthclinic.Controllers
                 return BadRequest(e.Message);
             }
         }
-
+        /// <summary>
+        /// End Point que aciona o método de Cadastrar.
+        /// </summary>
+        /// <returns>Consulta</returns>
 
         [HttpPost]
         public IActionResult Post(Consulta novaConsulta)
@@ -46,6 +53,10 @@ namespace Api_healthclinic.Controllers
             }
         }
 
+        /// <summary>
+        /// End Point que aciona o método(Atualizar) para editar uma consulta.
+        /// </summary>
+        /// <returns>Consulta Atualizada</returns>
         [HttpPatch]
         public IActionResult pacth(Consulta consulta, Guid id)
         {
@@ -60,7 +71,10 @@ namespace Api_healthclinic.Controllers
             }
         }
 
-
+        /// <summary>
+        /// End Point que aciona o método para buscar consulta pelo Id do Médico.
+        /// </summary>
+        /// <returns>Lista</returns>
         [HttpGet("{id}")]
         public IActionResult GetByMedico(Guid id)
         {
@@ -74,6 +88,10 @@ namespace Api_healthclinic.Controllers
                 return BadRequest(e.Message);
             }
         }
+        /// <summary>
+        /// End Point que aciona o método para buscar consulta pelo Id do Paciente.
+        /// </summary>
+        /// <returns>Lista </returns>
         [HttpGet("{id}")]
         public IActionResult GetByPaciente(Guid id)
         {
@@ -87,7 +105,10 @@ namespace Api_healthclinic.Controllers
                 return BadRequest(e.Message);
             }
         }
-
+        /// <summary>
+        /// End Point que aciona o método pra Deletar.
+        /// </summary>
+        /// <returns>Ok</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {

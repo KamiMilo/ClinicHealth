@@ -9,66 +9,70 @@ namespace Api_healthclinic.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class EspecilidadeController : ControllerBase
+    public class PacienteController : ControllerBase
     {
-        private IEspecialidadeRepository _especialidadeRepository;
 
-        public EspecilidadeController()
+        private IPacienteRepository _pacienteRepository;
+
+        public PacienteController()
         {
-            _especialidadeRepository = new EspecialidadeRepository();
+            _pacienteRepository = new PacienteRepository();
         }
         /// <summary>
-        /// End Point que aciona o método de Listar as Especialidades.
+        /// End Point que aciona o método de Listar os Pacientes.
         /// </summary>
         /// <returns>Lista</returns>
-
         [HttpGet]
         public IActionResult Get()
         {
             try
             {
+                return Ok(_pacienteRepository.Listar());
 
-                return Ok(_especialidadeRepository.Listar());
             }
+
             catch (Exception e)
             {
                 return BadRequest(e.Message);
+
             }
         }
+
         /// <summary>
         /// End Point que aciona o método de Cadastrar.
         /// </summary>
-        /// <returns>Especialidade</returns>
-
+        /// <returns>Ok</returns>
         [HttpPost]
-        public IActionResult Post(Especialidade novaEspecialidade)
+        public IActionResult Post(Paciente paciente)
         {
             try
             {
-                _especialidadeRepository.Cadastrar(novaEspecialidade);
-                return StatusCode(201, novaEspecialidade);
+                _pacienteRepository.Cadastrar(paciente);
+                return StatusCode(201);
             }
             catch (Exception e)
             {
                 return BadRequest(e.Message);
             }
         }
-        /// <summary>
-        /// End Point que aciona o método de (atualizar) editar uma especialidade.
-        /// </summary>
-        /// <returns>Especialidade atualizada</returns>
 
-        [HttpPatch]
-        public IActionResult pacth(Especialidade especialidade, Guid id)
+        /// <summary>
+        /// End Point que aciona o método Atualizar.
+        /// </summary>
+        /// <returns>Paciente atualizado</returns>
+        public IActionResult Patch(Guid id, Paciente paciente)
         {
             try
             {
-                _especialidadeRepository.Atualizar(id, especialidade);
-                return Ok(especialidade);
+                _pacienteRepository.Atualizar(id, paciente);
+                return StatusCode(200, paciente);
+
             }
+
             catch (Exception e)
             {
                 return BadRequest(e.Message);
+
             }
         }
 
@@ -76,20 +80,21 @@ namespace Api_healthclinic.Controllers
         /// End Point que aciona o método pra Deletar.
         /// </summary>
         /// <returns>Ok</returns>
-
         [HttpDelete]
-        public IActionResult Delete( Guid id)
+        public IActionResult Delete(Guid id)
         {
             try
             {
-                _especialidadeRepository.Deletar(id);
+                _pacienteRepository.Deletar(id);
                 return StatusCode(200);
+
             }
+
             catch (Exception e)
             {
                 return BadRequest(e.Message);
+
             }
         }
-
     }
 }

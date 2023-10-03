@@ -12,12 +12,15 @@ namespace Api_healthclinic.Controllers
     public class UsuarioController : ControllerBase
     {
         private IUsuarioRepository _usuarioRepository;
-
+    
         public UsuarioController()
         {
             _usuarioRepository = new UsuarioRepository();
         }
-
+        /// <summary>
+        /// End Point que aciona o método de Listar os Usúarios.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -31,8 +34,11 @@ namespace Api_healthclinic.Controllers
                 return BadRequest(e.Message);
             }
         }
+        /// <summary>
+        /// End Point que aciona o método de Cadastrar.
+        /// </summary>
+        /// <returns></returns>
 
- 
         [HttpPost]
         public IActionResult Post(Usuario usuario)
         {
@@ -46,7 +52,10 @@ namespace Api_healthclinic.Controllers
                 return BadRequest(e.Message);
             }
         }
-
+        /// <summary>
+        /// End Point que aciona o método de Buscar pelo ID.
+        /// </summary>
+        /// <returns></returns>
 
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)
@@ -61,6 +70,10 @@ namespace Api_healthclinic.Controllers
                 return BadRequest(e.Message);
             }
         }
+        /// <summary>
+        /// End Point que aciona o método pra Deletar.
+        /// </summary>
+        /// <returns></returns>
 
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
