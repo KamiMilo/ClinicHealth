@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Api_healthclinic"
+    "\\Controllers",
+    "\\Domains"
   ],
-  "SelectedNode": "\\Api_healthclinic\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

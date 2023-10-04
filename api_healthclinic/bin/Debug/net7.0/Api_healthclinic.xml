@@ -1,0 +1,549 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api_healthclinic</name>
+    </assembly>
+    <members>
+        <member name="M:Api_healthclinic.Controllers.ClinicaController.Get">
+            <summary>
+            End Point que aciona o método de Listar todas as clinicas.
+            </summary>
+            <returns>Lista</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.ClinicaController.Post(Api_healthclinic.Domains.Clinica)">
+            <summary>
+            End Point que aciona o método de Cadastrar.
+            </summary>
+            <returns>Consulta</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.ClinicaController.Delete(System.Guid)">
+            <summary>
+            End Point que aciona o método pra Deletar.
+            </summary>
+            <returns>Ok</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.ConsultaController.Get">
+            <summary>
+            End Point que aciona o método de Listar todas as Consultas.
+            </summary>
+            <returns>Lista</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.ConsultaController.Post(Api_healthclinic.Domains.Consulta)">
+            <summary>
+            End Point que aciona o método de Cadastrar.
+            </summary>
+            <returns>Consulta</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.ConsultaController.pacth(Api_healthclinic.Domains.Consulta,System.Guid)">
+            <summary>
+            End Point que aciona o método(Atualizar) para editar uma consulta.
+            </summary>
+            <returns>Consulta Atualizada</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.ConsultaController.GetByMedico(System.Guid)">
+            <summary>
+            End Point que aciona o método para buscar consulta pelo Id do Médico.
+            </summary>
+            <returns>Lista</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.ConsultaController.GetByPaciente(System.Guid)">
+            <summary>
+            End Point que aciona o método para buscar consulta pelo Id do Paciente.
+            </summary>
+            <returns>Lista </returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.ConsultaController.Delete(System.Guid)">
+            <summary>
+            End Point que aciona o método pra Deletar.
+            </summary>
+            <returns>Ok</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.EspecilidadeController.Get">
+            <summary>
+            End Point que aciona o método de Listar as Especialidades.
+            </summary>
+            <returns>Lista</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.EspecilidadeController.Post(Api_healthclinic.Domains.Especialidade)">
+            <summary>
+            End Point que aciona o método de Cadastrar.
+            </summary>
+            <returns>Especialidade</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.EspecilidadeController.pacth(Api_healthclinic.Domains.Especialidade,System.Guid)">
+            <summary>
+            End Point que aciona o método de (atualizar) editar uma especialidade.
+            </summary>
+            <returns>Especialidade atualizada</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.EspecilidadeController.Delete(System.Guid)">
+            <summary>
+            End Point que aciona o método pra Deletar.
+            </summary>
+            <returns>Ok</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.FeedbackController.Get">
+            <summary>
+            End Point que aciona o método de Listar os comentários.
+            </summary>
+            <returns>Lista</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.FeedbackController.Post(Api_healthclinic.Domains.Feedback)">
+            <summary>
+            End Point que aciona o método de Cadastrar.
+            </summary>
+            <returns>Ok</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.FeedbackController.Patch(System.Guid,Api_healthclinic.Domains.Feedback)">
+            <summary>
+            End Point que aciona o método(Atualizar) para editar um comentário.
+            </summary>
+            <returns>Comentário atualizado</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.FeedbackController.Delete(System.Guid)">
+            <summary>
+            End Point que aciona o método pra Deletar.
+            </summary>
+            <returns>Ok</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.LoginController.Post(Api_healthclinic.ViewModels.LoginViewModels)">
+            <summary>
+            End Point de Login.
+            </summary>
+            <param name="usuario"></param>
+            <returns>Token de acesso</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.MedicoController.Post(Api_healthclinic.Domains.Medico)">
+            <summary>
+            End Point que aciona o método de Cadastrar.
+            </summary>
+            <returns>Ok</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.MedicoController.Get">
+            <summary>
+            End Point que aciona o método de Listar os médicos.
+            </summary>
+            <returns>Lista</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.MedicoController.Patch(System.Guid,Api_healthclinic.Domains.Medico)">
+            <summary>
+            End Point que aciona o método Atualizar.
+            </summary>
+            <returns>Médico atualizado</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.MedicoController.Delete(System.Guid)">
+            <summary>
+            End Point que aciona o método pra Deletar.
+            </summary>
+            <returns>Ok</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.PacienteController.Get">
+            <summary>
+            End Point que aciona o método de Listar os Pacientes.
+            </summary>
+            <returns>Lista</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.PacienteController.Post(Api_healthclinic.Domains.Paciente)">
+            <summary>
+            End Point que aciona o método de Cadastrar.
+            </summary>
+            <returns>Ok</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.PacienteController.Patch(System.Guid,Api_healthclinic.Domains.Paciente)">
+            <summary>
+            End Point que aciona o método Atualizar.
+            </summary>
+            <returns>Paciente atualizado</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.PacienteController.Delete(System.Guid)">
+            <summary>
+            End Point que aciona o método pra Deletar.
+            </summary>
+            <returns>Ok</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.ProntuarioController.Get">
+            <summary>
+            End Point que aciona o método de listar.
+            </summary>
+            <returns>Lista</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.ProntuarioController.Post(Api_healthclinic.Domains.Prontuario)">
+            <summary>
+            End Point que aciona o método de Cadastrar.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.ProntuarioController.GetById(System.Guid)">
+            <summary>
+            End Point que aciona o método de Buscar pelo id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.ProntuarioController.Delete(System.Guid)">
+            <summary>
+            End Point que aciona o método pra Deletar.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.TipoDeUsuarioController.Post(Api_healthclinic.Domains.TipoUsuario)">
+            <summary>
+            End Point para cadastrar um novo tipo de usuario.
+            </summary>
+            <param name="tiposUsuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.TipoDeUsuarioController.Get">
+            <summary>
+            End Point que lista os Tipos de Usuario cadastrados
+            </summary>
+            <returns>Lista</returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.TipoDeUsuarioController.Delete(System.Guid)">
+            <summary>
+            End Point que aciona o método pra Deletar.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.UsuarioController.Get">
+            <summary>
+            End Point que aciona o método de Listar os Usúarios.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.UsuarioController.Post(Api_healthclinic.Domains.Usuario)">
+            <summary>
+            End Point que aciona o método de Cadastrar.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.UsuarioController.GetById(System.Guid)">
+            <summary>
+            End Point que aciona o método de Buscar pelo ID.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Controllers.UsuarioController.Delete(System.Guid)">
+            <summary>
+            End Point que aciona o método pra Deletar.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IClinicaRepository.Cadastrar(Api_healthclinic.Domains.Clinica)">
+            <summary>
+            Método para Cadastrar uma nova clínica.
+            </summary>
+            <param name="novoClinica"></param>
+            
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IClinicaRepository.Listar">
+            <summary>
+            Método para Listar.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IClinicaRepository.Deletar(System.Guid)">
+            <summary>
+            método para Deletar, passando o id pelo corpo da aquisição.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IConsultaRepository.Cadastrar(Api_healthclinic.Domains.Consulta)">
+            <summary>
+            Método para Cadastrar uma consulta.
+            </summary>
+            <param name="novoConsulta"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IConsultaRepository.Listar">
+            <summary>
+            Método para listar as consultas.
+            </summary>
+            <returns>Lista de Consultas</returns>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IConsultaRepository.ListarPaciente(System.Guid)">
+            <summary>
+            método para listar consultas pelo paciente,passando seu id pelo corpo da aquisição.
+            </summary>
+            <param name="id"></param>
+            <returns>Lista de Consultas</returns>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IConsultaRepository.ListarMedico(System.Guid)">
+            <summary>
+             método para listar consultas pelo Médico,passando seu id pelo corpo da aquisição.
+            </summary>
+            <param name="id"></param>
+            <returns>Lista de Consultas</returns>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IConsultaRepository.Atualizar(System.Guid,Api_healthclinic.Domains.Consulta)">
+            <summary>
+            Método para atualizar propriedades de uma consulta.
+            </summary>
+            <param name="id"></param>
+            <param name="consulta"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IConsultaRepository.Deletar(System.Guid)">
+            <summary>
+            Método paa deletar uma consulta, passando seu id pelo corpo da aquisição.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IConsultaRepository.BuscarPorId(System.Guid)">
+            <summary>
+            Método para buscar uma consulta,,passando seu id pelo corpo da aquisição.
+            </summary>
+            <param name="id"></param>
+            <returns>Consulta</returns>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IEspecialidadeRepository.Cadastrar(Api_healthclinic.Domains.Especialidade)">
+            <summary>
+            Método para cadastrar uma especialidade
+            </summary>
+            <param name="Especialidade"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IEspecialidadeRepository.Listar">
+            <summary>
+            Método para listar as especialidades.
+            </summary>
+            <returns>Lista de Especialidades</returns>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IEspecialidadeRepository.Atualizar(System.Guid,Api_healthclinic.Domains.Especialidade)">
+            <summary>
+            Método para atualizar especialidade.
+            </summary>
+            <param name="id"></param>
+            <param name="especialidade"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IEspecialidadeRepository.Deletar(System.Guid)">
+            <summary>
+            Método para deletar especialidade passando seu id pelo corpo d aquisição.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IFeedbackRepository.Comentar(Api_healthclinic.Domains.Feedback)">
+            <summary>
+            Método para cdastrar um comentário.
+            </summary>
+            <param name="novoComentario"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IFeedbackRepository.Listar">
+            <summary>
+            Método para listar comentários.
+            </summary>
+            <returns>lista de comentários</returns>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IFeedbackRepository.Atualizar(System.Guid,Api_healthclinic.Domains.Feedback)">
+            <summary>
+            Método para atualizar comentário.
+            </summary>
+            <param name="id"></param>
+            <param name="comentario"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IFeedbackRepository.Deletar(System.Guid)">
+            <summary>
+            Método para deletar comentário, passando seu id pelo corpo da aquisição.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IMedicoRepository.Cadastrar(Api_healthclinic.Domains.Medico)">
+            <summary>
+             Método para Cadastrar um novo médico.
+            </summary>
+            <param name="Medico"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IMedicoRepository.Listar">
+            <summary>
+             Método para listar os Médicos.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IMedicoRepository.Atualizar(System.Guid,Api_healthclinic.Domains.Medico)">
+            <summary>
+            Método para atualizar propriedades de um médico.
+            </summary>
+            <param name="id"></param>
+            <param name="medico"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IMedicoRepository.Deletar(System.Guid)">
+            <summary>
+             Método paa deletar um Médico, passando seu id pelo corpo da aquisição
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IPacienteRepository.Cadastrar(Api_healthclinic.Domains.Paciente)">
+            <summary>
+             Método para Cadastrar um novo paciente.
+            </summary>
+            <param name="Paciente"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IPacienteRepository.Listar">
+            <summary>
+            Método para listar as consultas.
+            </summary>
+            <returns>Lista de Pacientes</returns>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IPacienteRepository.Atualizar(System.Guid,Api_healthclinic.Domains.Paciente)">
+            <summary>
+             Método para atualizar propriedades de um Paciente.
+            </summary>
+            <param name="id"></param>
+            <param name="paciente"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IPacienteRepository.Deletar(System.Guid)">
+            <summary>
+             Método paa deletar um paciente, passando seu id pelo corpo da aquisição.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IProntuarioRepository.Cadastrar(Api_healthclinic.Domains.Prontuario)">
+            <summary>
+            Método para Cadastrar um Prontúario.
+            </summary>
+            <param name="novoProntuario"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IProntuarioRepository.Listar">
+            <summary>
+            Método para listar Prontúarios.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IProntuarioRepository.BuscarporId(System.Guid)">
+            <summary>
+            Método para buscar paciente, passando seu id pelo corpo da aquisição.
+            </summary>
+            <param name="id"></param>
+            <returns>Paciente</returns>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.IProntuarioRepository.Delete(System.Guid)">
+            <summary>
+            Método paa deletar um paciente, passando seu id pelo corpo da aquisição.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.ITipoDeUsuarioRepository.Cadastrar(Api_healthclinic.Domains.TipoUsuario)">
+            <summary>
+            Método para Cadastrar um novo tipo de usuário.
+            </summary>
+            <param name="novoTipo"></param>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.ITipoDeUsuarioRepository.Listar">
+            <summary>
+            Método para listar tipos de usuário
+            </summary>
+            <returns>Lista de tipos de usuário </returns>
+        </member>
+        <member name="M:Api_healthclinic.Interfaces.ITipoDeUsuarioRepository.Deletar(System.Guid)">
+            <summary>
+             Método paa deletar um tipo de usuário, passando seu id pelo corpo da aquisição.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:Api_healthclinic.Migrations.BD">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Api_healthclinic.Migrations.BD2">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Api_healthclinic.Migrations.BD3">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD3.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD3.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD3.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Api_healthclinic.Migrations.Bd4">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.Bd4.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.Bd4.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.Bd4.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Api_healthclinic.Migrations.BD5">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD5.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD5.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD5.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Api_healthclinic.Migrations.BD6">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD6.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD6.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD6.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Api_healthclinic.Migrations.BD7">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD7.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD7.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD7.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Api_healthclinic.Migrations.BD8">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD8.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD8.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD8.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Api_healthclinic.Migrations.BD9">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD9.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD9.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api_healthclinic.Migrations.BD9.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
